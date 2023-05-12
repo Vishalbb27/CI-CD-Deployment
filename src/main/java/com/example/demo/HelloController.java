@@ -11,23 +11,13 @@ public class HelloController {
 	
 	@RequestMapping("/")
 	public String root() {
-		return "<h2>Endpoints avilable:</h2><ol><li>Hello: <a href='/hello'>/hello</a></li><li>Greet to Ip: <a href='/greeting'>/greeting</a></li></ol>";
+		return "<h2>Click here to start Spring Boot: </h2><ol><li>Home : <a href='/home'>/home</a></li></ol>";
 	}
 	
-	@RequestMapping("/hello")
+	@RequestMapping("/home")
 	public String hello() {
-		return "Hello from spring boot";
+		return "Welcome to Spring Boot";
 	}
 	
-	@RequestMapping("/greeting")
-	public String greet() {
-		String ip = "";
-		try {
-			ip = InetAddress.getLocalHost().toString();
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "<h3>Hello IP: "+ip+"</h3>";
-	}
+	
 }
